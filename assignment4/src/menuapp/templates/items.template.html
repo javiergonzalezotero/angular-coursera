@@ -1,0 +1,14 @@
+
+<ol class="breadcrumb">
+  <li><a ui-sref="home">Home</a></li>
+  <li><a ui-sref="categories">Categories</a></li>
+  <li class="active">{{ itemsList.categoryName }}</li>
+</ol>
+
+<div class="list-group">
+  <a ng-repeat="item in itemsList.items" class="list-group-item">
+  <span class="badge">{{ item.price_large | currency }}</span>
+    <h4 class="list-group-item-heading">{{ item.name }}</h4>
+    <p class="list-group-item-text">{{ item.description }}</p>
+  </a>
+</div>

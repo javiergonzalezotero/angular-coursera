@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="home">Home</a></li>
+  <li class="active">Categories</li>
+</ol>
+
+
+<div class="list-group">
+  <a ng-repeat="category in categoriesList.categories" ui-sref="items({categoryShortName: category.short_name})" class="list-group-item">
+    <h4 class="list-group-item-heading">{{ category.name }}</h4>
+    <p class="list-group-item-text">{{ category.special_instructions }}</p>
+  </a>
+</div>
