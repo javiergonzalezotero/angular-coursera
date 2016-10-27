@@ -1,0 +1,38 @@
+<div class="container">
+	<h2>Sign up!</h2>
+	<form name='regForm' class="col-md-6" novalidate>
+		<div class="form-group">
+			<input type="text" class="form-control" name="firstName" placeholder="First name" ng-model="reg.user.firstName" required>
+			<span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
+				First name is required
+			</span>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="email" name="email" placeholder="Email" ng-model="reg.user.email" required>
+			<span ng-if="regForm.email.$invalid && regForm.email.$touched">
+				Must be a valid email address: handle@domain format
+			</span>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" name="phone" placeholder="Phone"
+			ng-model="reg.user.phone" required>
+			<span ng-if="regForm.phone.$error.required && regForm.phone.$touched">
+				Phone is required
+			</span>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" name="short_name" placeholder="Favourite dish (short_name)"
+			ng-model="reg.user.short_name" required>
+			<span ng-if="regForm.short_name.$error.required && regForm.short_name.$touched">
+				Favourite dish is required
+			</span>
+			<span ng-if="reg.noMenuNumber">
+				No such menu number exists
+			</span>
+		</div>
+		<button class="btn btn-success"	ng-disabled="regForm.$invalid"	ng-click="reg.submit()">Submit</button>
+		<span ng-if="reg.success">
+			Your information has been saved
+		</span>
+	</form>
+</div>
